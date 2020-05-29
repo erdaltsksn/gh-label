@@ -16,7 +16,7 @@ func init() {
 	token, err := keyring.Get("gh-label", "anon")
 	if err != nil {
 		color.Danger.Println("Token couldn't load")
-		color.Info.Prompt(`Use gh-label config --token "YOUR_GITHUB_TOKEN"`)
+		color.Info.Prompt(`Use gh-label configure --token "YOUR_GITHUB_TOKEN"`)
 		os.Exit(1)
 	}
 
