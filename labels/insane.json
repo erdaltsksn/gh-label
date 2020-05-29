@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Status: In Progress",
+        "color": "B2EBF2"
+    },
+    {
+        "name": "Type: Question",
+        "color": "FBEB00"
+    },
+    {
+        "name": "Status: Complete",
+        "color": "000000"
+    },
+    {
+        "name": "Type: Enhancement",
+        "color": "00F906"
+    },
+    {
+        "name": "Type: Bug",
+        "color": "FA0702"
+    },
+    {
+        "name": "Status: Needs Info",
+        "color": "A898FA"
+    },
+    {
+        "name": "Status: Duplicate",
+        "color": "FBBF6F"
+    },
+    {
+        "name": "Priority: Low",
+        "color": "FB5F82"
+    },
+    {
+        "name": "Priority: Medium",
+        "color": "E05573"
+    },
+    {
+        "name": "Priority: Critical",
+        "color": "7A2F3F"
+    },
+    {
+        "name": "Priority: High",
+        "color": "BA4760"
+    },
+    {
+        "name": "Status: Wontfix",
+        "color": "cccccc"
+    }
+]
