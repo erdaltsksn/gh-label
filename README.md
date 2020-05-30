@@ -47,44 +47,14 @@ go get -u github.com/erdaltsksn/gh-label
 
 ## Usage
 
+You may find the documentation for [each command](docs/gh-label.md) inside the
+[docs](docs) folder.
+
 ### Getting Help
 
 ```sh
 gh-label --help
 gh-label [command] --help
-```
-
-### Export labels from a repository to a file
-
-```sh
-gh-label export --repo erdaltsksn/playground
-```
-
-This will export the labels and write them into a file at the current directory.
-
-**You can export the labels into a file by specifying file path.**
-
-```sh
-gh-label export --repo erdaltsksn/playground --out=$HOME/Desktop/mylabels.json
-```
-
-### Generate the labels using a predefined list
-
-```sh
-gh-label generate --repo erdaltsksn/playground --list "insane"
-```
-
-**You may use your custom file as a list.**
-
-```sh
-gh-label  generate --repo erdaltsksn/playground --file $HOME/my-labels.json
-```
-
-**DANGER:** You may add `--force` parameter if you want to delete all labels
-before generating new labels.
-
-```sh
-gh-label  generate --repo erdaltsksn/playground --list "insane" --force
 ```
 
 ## Contributing

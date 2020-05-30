@@ -14,6 +14,7 @@ project. Thank you for helping out and remember, no contribution is too small.
 04. **Create** a git branch and **Start working** on your fix, feature and etc
     on **its own branch**
 05. **Create** and **Run** the **tests** (if there are any)
+    - **Run** `go run docs/gen.go` to automatically generate command docs
 06. **Commit** your changes according to [**Commit Message Guidelines**](#commit-message-guidelines)
 07. **Push** the changes to your fork and **Create** a Pull Request for review
 08. **Communicate** with the maintainer about the revisions
