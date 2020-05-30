@@ -21,6 +21,14 @@ var generateCmd = &cobra.Command{
 	Short: "Generate labels using a list",
 	Long: `This will generate labels using predefined label list or a custom
 label file.`,
+	Example: `# Generate the labels using a predefined list
+gh-label generate --repo erdaltsksn/playground --list "insane"
+
+# User custom file as a list to generate the labels
+gh-label generate --repo erdaltsksn/playground --file my-labels.json
+
+# DANGER: Remove all the labels before generating the labels
+gh-label generate --repo erdaltsksn/playground --list "insane" --force`,
 	Run: func(cmd *cobra.Command, args []string) {
 		if repo == "" || !strings.Contains(repo, "/") {
 			color.Danger.Println("You have to type the repository name")

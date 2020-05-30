@@ -19,6 +19,11 @@ var exportCmd = &cobra.Command{
 	Short: "Export GitHub label list into a file",
 	Long: `This command will find relevant repository and export label list into
 a file. You can state which directory the file will be out using parameter.`,
+	Example: `# Export the labels into a file at the current directory
+gh-label export --repo erdaltsksn/playground
+
+# Export the labels into a file by specifying absolute file path
+gh-label export --repo erdaltsksn/playground --out ~/Desktop/mylabels.json`,
 	Run: func(cmd *cobra.Command, args []string) {
 		if repo == "" || !strings.Contains(repo, "/") {
 			color.Danger.Println("You have to type the repository name")

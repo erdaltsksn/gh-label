@@ -16,6 +16,7 @@ var configCmd = &cobra.Command{
 	Short: "Configure gh-label application",
 	Long: `You can use this command to set up GitHub token and any configuration
 needed for this app works flawless.`,
+	Example: `gh-label config --token GITHUB_TOKEN`,
 	Run: func(cmd *cobra.Command, args []string) {
 		if token == "" {
 			color.Danger.Println("You have to enter a valid GitHub token")
