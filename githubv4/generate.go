@@ -3,6 +3,7 @@ package githubv4
 import (
 	"encoding/json"
 	"fmt"
+	"io"
 	"os"
 	"strings"
 
@@ -10,7 +11,7 @@ import (
 )
 
 // GenerateLabels will generate a label list and put them into a repository.
-func GenerateLabels(repository string, labelsFile string) {
+func GenerateLabels(repository string, fileLabel io.Reader) {
 	repo := strings.Split(repository, "/")
 
 	data := graphqlQuery(fmt.Sprintf(`
@@ -21,15 +22,8 @@ func GenerateLabels(repository string, labelsFile string) {
 		}
 	`, repo[0], repo[1]))
 
-	file, err := os.Open(labelsFile)
-	if err != nil {
-		color.Danger.Println("Error while trying to open the labels file")
-		color.Warn.Prompt(err.Error())
-		os.Exit(1)
-	}
-
 	var labels Nodes
-	if err = json.NewDecoder(file).Decode(&labels); err != nil {
+	if err := json.NewDecoder(fileLabel).Decode(&labels); err != nil {
 		color.Danger.Println("We couldn't marshal the labels file")
 		color.Warn.Prompt(err.Error())
 		os.Exit(1)

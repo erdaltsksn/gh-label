@@ -1,6 +1,8 @@
 package cmd
 
 import (
+	"io"
+	"net/http"
 	"os"
 	"strings"
 
@@ -10,7 +12,6 @@ import (
 	"github.com/erdaltsksn/gh-label/githubv4"
 )
 
-var labelsFile string
 var force bool
 var list string
 var file string
@@ -42,26 +43,32 @@ gh-label generate --repo erdaltsksn/playground --list "insane" --force`,
 			os.Exit(1)
 		}
 
+		var fileLabel io.Reader
 		if file != "" {
-			labelsFile = file
+			f, err := os.Open(file)
+			if err != nil {
+				color.Danger.Println("Error while trying to open the labels file")
+				color.Warn.Prompt(err.Error())
+				os.Exit(1)
+			}
+			fileLabel = f
 		} else {
-			dir, err := os.Getwd()
+			resp, err := http.Get("https://raw.githubusercontent.com/erdaltsksn/gh-label/master/labels/" + list + ".json")
 			if err != nil {
 				color.Danger.Println("We couldn't load the predefined labels.")
 				color.Info.Prompt(`Use --file "my-labels.json" as a flag`)
 				os.Exit(1)
 			}
-			labelsFile = dir + "/labels/" + list + ".json"
+			fileLabel = resp.Body
 		}
 
 		if force {
 			githubv4.RemoveLabels(repo)
 		}
 
-		githubv4.GenerateLabels(repo, labelsFile)
+		githubv4.GenerateLabels(repo, fileLabel)
 
-		color.Success.Prompt("The Labels are imported into the repository:")
-		color.Info.Println(repo, "<=", labelsFile)
+		color.Success.Prompt("The Labels are imported into the repository")
 	},
 }
 
