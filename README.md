@@ -23,7 +23,7 @@ This is required. You can generate a new one from [here](https://github.com/sett
 
 ```sh
 go get github.com/erdaltsksn/gh-label
-gh-label configure --token <GITHUB_TOKEN>
+gh-label config --token <GITHUB_TOKEN>
 ```
 
 ### 3. Generate the labels using a predefined list
@@ -36,7 +36,7 @@ gh-label generate --repo erdaltsksn/playground --list "insane"
 
 ```sh
 go get github.com/erdaltsksn/gh-label
-gh-label configure --token <GITHUB_TOKEN>
+gh-label config --token <GITHUB_TOKEN>
 ```
 
 ## Updating
