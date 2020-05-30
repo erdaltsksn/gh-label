@@ -71,7 +71,7 @@ gh-label export --repo erdaltsksn/playground --out=$HOME/Desktop/mylabels.json
 ### Generate the labels using a predefined list
 
 ```sh
-gh-label generate --repo erdaltsksn/gh-label --list "insane"
+gh-label generate --repo erdaltsksn/playground --list "insane"
 ```
 
 **You may use your custom file as a list.**
