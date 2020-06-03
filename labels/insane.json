@@ -1,23 +1,28 @@
 [
     {
+        "name": "Priority: Critical",
+        "color": "ff0000",
+        "description": "This should be dealt with ASAP. Not fixing this issue would be a serious error."
+    },
+    {
+        "name": "Priority: High",
+        "color": "ff4400",
+        "description": "After critical issues are fixed, these should be dealt with before any further issues."
+    },
+    {
+        "name": "Priority: Medium",
+        "color": "ff8800",
+        "description": "This issue may be useful, and needs some attention."
+    },
+    {
+        "name": "Priority: Low",
+        "color": "ffcc00",
+        "description": "This issue can be picked up by anyone looking to contribute to the project, as an entry fix."
+    },
+    {
         "name": "Status: In Progress",
         "color": "B2EBF2",
         "description": "This issue is being worked on, and has someone assigned."
-    },
-    {
-        "name": "Type: Question",
-        "color": "3333ff",
-        "description": "A query or seeking clarification on parts of the specifications."
-    },
-    {
-        "name": "Type: Enhancement",
-        "color": "33ff33",
-        "description": "This is a new feature or request which will probably ask for additions or changes."
-    },
-    {
-        "name": "Type: Bug",
-        "color": "ff3333",
-        "description": "Something isn't working as expected."
     },
     {
         "name": "Status: Needs Info",
@@ -30,28 +35,23 @@
         "description": "This issue or pull request already exists."
     },
     {
-        "name": "Priority: Low",
-        "color": "ffcc00",
-        "description": "This issue can be picked up by anyone looking to contribute to the project, as an entry fix."
-    },
-    {
-        "name": "Priority: Medium",
-        "color": "ff8800",
-        "description": "This issue may be useful, and needs some attention."
-    },
-    {
-        "name": "Priority: Critical",
-        "color": "ff0000",
-        "description": "This should be dealt with ASAP. Not fixing this issue would be a serious error."
-    },
-    {
-        "name": "Priority: High",
-        "color": "ff4400",
-        "description": "After critical issues are fixed, these should be dealt with before any further issues."
-    },
-    {
         "name": "Status: Wontfix",
         "color": "000000",
         "description": "This will not be worked on."
+    },
+    {
+        "name": "Type: Bug",
+        "color": "ff3333",
+        "description": "Something isn't working as expected."
+    },
+    {
+        "name": "Type: Enhancement",
+        "color": "33ff33",
+        "description": "This is a new feature or request which will probably ask for additions or changes."
+    },
+    {
+        "name": "Type: Question",
+        "color": "3333ff",
+        "description": "A query or seeking clarification on parts of the specifications."
     }
 ]
