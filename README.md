@@ -34,12 +34,27 @@ gh-label generate --repo erdaltsksn/playground --list "insane"
 
 ## Installation
 
+### Using Homebrew
+
+```sh
+brew install erdaltsksn/tap/gh-label
+```
+
+### Using Go Modules
+
 ```sh
 go get github.com/erdaltsksn/gh-label
-gh-label config --token <GITHUB_TOKEN>
 ```
 
 ## Updating
+
+### Using Homebrew
+
+```sh
+brew install erdaltsksn/tap/gh-label
+```
+
+### Using Go Modules
 
 ```sh
 go get -u github.com/erdaltsksn/gh-label
