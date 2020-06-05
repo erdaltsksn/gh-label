@@ -13,3 +13,11 @@ builds:
   - darwin
   - linux
   - windows
+
+brews:
+  - github:
+      owner: erdaltsksn
+      name: homebrew-tap
+    folder: Formula
+    homepage: https://github.com/erdaltsksn/gh-label
+    description: A tool to help you manage GitHub issue labels
