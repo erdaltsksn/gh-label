@@ -12,10 +12,9 @@ var token string
 
 // configCmd represents the config command
 var configCmd = &cobra.Command{
-	Use:   "config",
-	Short: "Configure gh-label application",
-	Long: `You can use this command to set up GitHub token and any configuration
-needed for this app works flawless.`,
+	Use:     "config",
+	Short:   "Configure gh-label application",
+	Long:    `Set up GitHub token and any configuration needed for this app works.`,
 	Example: `gh-label config --token GITHUB_TOKEN`,
 	Run: func(cmd *cobra.Command, args []string) {
 		if token == "" {

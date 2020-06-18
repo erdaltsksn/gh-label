@@ -17,8 +17,8 @@ var repo string
 var exportCmd = &cobra.Command{
 	Use:   "export",
 	Short: "Export GitHub label list into a file",
-	Long: `This command will find relevant repository and export label list into
-a file. You can state which directory the file will be out using parameter.`,
+	Long: `Find relevant repository and export label list into a file. You can
+state which directory the file will be out using parameter.`,
 	Example: `# Export the labels into a file at the current directory
 gh-label export --repo erdaltsksn/playground
 

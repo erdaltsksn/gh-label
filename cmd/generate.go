@@ -20,8 +20,7 @@ var file string
 var generateCmd = &cobra.Command{
 	Use:   "generate",
 	Short: "Generate labels using a list",
-	Long: `This will generate labels using predefined label list or a custom
-label file.`,
+	Long:  `Generate labels using predefined label list or a custom label file.`,
 	Example: `# Generate the labels using a predefined list
 gh-label generate --repo erdaltsksn/playground --list "insane"
 
