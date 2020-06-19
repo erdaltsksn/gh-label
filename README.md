@@ -51,7 +51,7 @@ go get github.com/erdaltsksn/gh-label
 ### Using Homebrew
 
 ```sh
-brew install erdaltsksn/tap/gh-label
+brew upgrade erdaltsksn/tap/gh-label
 ```
 
 ### Using Go Modules
