@@ -1,0 +1,34 @@
+[
+    {
+        "name": "bug",
+        "color": "d9534f"
+    },
+    {
+        "name": "confirmed",
+        "color": "d9534f"
+    },
+    {
+        "name": "critical",
+        "color": "d9534f"
+    },
+    {
+        "name": "discussion",
+        "color": "428bca"
+    },
+    {
+        "name": "documentation",
+        "color": "f0ad4e"
+    },
+    {
+        "name": "enhancement",
+        "color": "5cb85c"
+    },
+    {
+        "name": "suggestion",
+        "color": "428bca"
+    },
+    {
+        "name": "support",
+        "color": "f0ad4e"
+    }
+]
