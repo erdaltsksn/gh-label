@@ -36,7 +36,7 @@ func RemoveLabels(repository string) {
 				}
 			}
 		`, labelGlobalID))
-		graphqlRequest.Header.Set("Authorization", "bearer "+githubToken)
+		graphqlRequest.Header.Set("Authorization", "bearer "+getGitHubToken())
 		graphqlRequest.Header.Set("Accept", "application/vnd.github.bane-preview+json")
 
 		if err := graphqlClient.Run(context.Background(), graphqlRequest, nil); err != nil {

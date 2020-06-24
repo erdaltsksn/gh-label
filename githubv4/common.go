@@ -10,9 +10,8 @@ import (
 )
 
 var graphqlClient = graphql.NewClient("https://api.github.com/graphql")
-var githubToken string
 
-func init() {
+func getGitHubToken() string {
 	token, err := keyring.Get("gh-label", "anon")
 	if err != nil {
 		color.Danger.Println("Token couldn't load")
@@ -20,7 +19,7 @@ func init() {
 		os.Exit(1)
 	}
 
-	githubToken = token
+	return token
 }
 
 type graphqlQueryResponse struct {
@@ -43,7 +42,7 @@ type Nodes []struct {
 
 func graphqlQuery(q string) graphqlQueryResponse {
 	graphqlRequest := graphql.NewRequest(q)
-	graphqlRequest.Header.Set("Authorization", "bearer "+githubToken)
+	graphqlRequest.Header.Set("Authorization", "bearer "+getGitHubToken())
 	graphqlRequest.Header.Set("Accept", "application/vnd.github.bane-preview+json")
 
 	var data graphqlQueryResponse
