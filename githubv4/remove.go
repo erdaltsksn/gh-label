@@ -3,10 +3,9 @@ package githubv4
 import (
 	"context"
 	"fmt"
-	"os"
 	"strings"
 
-	"github.com/gookit/color"
+	"github.com/erdaltsksn/cui"
 	"github.com/machinebox/graphql"
 )
 
@@ -40,9 +39,7 @@ func RemoveLabels(repository string) {
 		graphqlRequest.Header.Set("Accept", "application/vnd.github.bane-preview+json")
 
 		if err := graphqlClient.Run(context.Background(), graphqlRequest, nil); err != nil {
-			color.Danger.Println("There is a problem while querying GitHub API v4")
-			color.Warn.Prompt(err.Error())
-			os.Exit(1)
+			cui.Error("There is a problem while querying GitHub API v4", err)
 		}
 	}
 

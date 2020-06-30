@@ -1,9 +1,7 @@
 package cmd
 
 import (
-	"os"
-
-	"github.com/gookit/color"
+	"github.com/erdaltsksn/cui"
 	"github.com/spf13/cobra"
 	"github.com/zalando/go-keyring"
 )
@@ -18,18 +16,17 @@ var configCmd = &cobra.Command{
 	Example: `gh-label config --token GITHUB_TOKEN`,
 	Run: func(cmd *cobra.Command, args []string) {
 		if token == "" {
-			color.Danger.Println("You have to enter a valid GitHub token")
-			color.Info.Prompt(`Use --token "YOUR_GITHUB_TOKEN" as a flag`)
-			os.Exit(1)
+			cui.Warning(
+				"You have to enter a valid GitHub token",
+				`Use --token "YOUR_GITHUB_TOKEN" as a flag`,
+			)
 		}
 
 		if err := keyring.Set("gh-label", "anon", token); err != nil {
-			color.Danger.Println("Error while saving the token")
-			color.Warn.Prompt(err.Error())
-			os.Exit(1)
+			cui.Error("Error while saving the token", err)
 		}
 
-		color.Success.Prompt("The GitHub Token saved into key manager.")
+		cui.Success("The GitHub Token saved into key manager.")
 	},
 }
 

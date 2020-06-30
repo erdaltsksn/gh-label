@@ -4,10 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"os"
 	"strings"
 
-	"github.com/gookit/color"
+	"github.com/erdaltsksn/cui"
 )
 
 // ExportLabels will export labels into a file.
@@ -32,14 +31,10 @@ func ExportLabels(repository string, out string) {
 
 	labels, err := json.MarshalIndent(data.Repository.Labels.Nodes, "", "    ")
 	if err != nil {
-		color.Danger.Println("We couldn't marshal the graphql query response")
-		color.Warn.Prompt(err.Error())
-		os.Exit(1)
+		cui.Error("We couldn't marshal the graphql query response", err)
 	}
 
 	if err := ioutil.WriteFile(out, labels, 0755); err != nil {
-		color.Danger.Println("There is a problem with writing labels into the file")
-		color.Warn.Prompt(err.Error())
-		os.Exit(1)
+		cui.Error("There is a problem with writing labels into the file", err)
 	}
 }

@@ -1,10 +1,7 @@
 package cmd
 
 import (
-	"os"
-
 	"github.com/erdaltsksn/cui"
-	"github.com/gookit/color"
 	"github.com/spf13/cobra"
 )
 
@@ -24,8 +21,7 @@ You are welcome to add yours.`,
 // This is called by main.main(). It only needs to happen once to the rootCmd.
 func Execute() {
 	if err := rootCmd.Execute(); err != nil {
-		color.Danger.Prompt(err.Error())
-		os.Exit(1)
+		cui.Error("Something went wrong", err)
 	}
 }
 

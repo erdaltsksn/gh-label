@@ -2,9 +2,9 @@ package githubv4
 
 import (
 	"context"
-	"os"
+	"errors"
 
-	"github.com/gookit/color"
+	"github.com/erdaltsksn/cui"
 	"github.com/machinebox/graphql"
 	"github.com/zalando/go-keyring"
 )
@@ -14,9 +14,10 @@ var graphqlClient = graphql.NewClient("https://api.github.com/graphql")
 func getGitHubToken() string {
 	token, err := keyring.Get("gh-label", "anon")
 	if err != nil {
-		color.Danger.Println("Token couldn't load")
-		color.Info.Prompt(`Use gh-label config --token "YOUR_GITHUB_TOKEN"`)
-		os.Exit(1)
+		cui.Error("Token couldn't load",
+			err,
+			errors.New(`Use gh-label config --token "YOUR_GITHUB_TOKEN"`),
+		)
 	}
 
 	return token
@@ -47,9 +48,7 @@ func graphqlQuery(q string) graphqlQueryResponse {
 
 	var data graphqlQueryResponse
 	if err := graphqlClient.Run(context.Background(), graphqlRequest, &data); err != nil {
-		color.Danger.Println("There is a problem while querying GitHub API v4")
-		color.Warn.Prompt(err.Error())
-		os.Exit(1)
+		cui.Error("There is a problem while querying GitHub API v4", err)
 	}
 
 	return data

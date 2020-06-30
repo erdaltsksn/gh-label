@@ -4,10 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"os"
 	"strings"
 
-	"github.com/gookit/color"
+	"github.com/erdaltsksn/cui"
 )
 
 // GenerateLabels will generate a label list and put them into a repository.
@@ -24,9 +23,7 @@ func GenerateLabels(repository string, fileLabel io.Reader) {
 
 	var labels Nodes
 	if err := json.NewDecoder(fileLabel).Decode(&labels); err != nil {
-		color.Danger.Println("We couldn't marshal the labels file")
-		color.Warn.Prompt(err.Error())
-		os.Exit(1)
+		cui.Error("We couldn't marshal the labels file", err)
 	}
 
 	for i := range labels {

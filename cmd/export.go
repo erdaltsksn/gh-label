@@ -1,12 +1,11 @@
 package cmd
 
 import (
-	"os"
 	"strings"
 
-	"github.com/gookit/color"
 	"github.com/spf13/cobra"
 
+	"github.com/erdaltsksn/cui"
 	"github.com/erdaltsksn/gh-label/githubv4"
 )
 
@@ -26,9 +25,10 @@ gh-label export --repo erdaltsksn/playground
 gh-label export --repo erdaltsksn/playground --out ~/Desktop/mylabels.json`,
 	Run: func(cmd *cobra.Command, args []string) {
 		if repo == "" || !strings.Contains(repo, "/") {
-			color.Danger.Println("You have to type the repository name")
-			color.Info.Prompt(`Use --repo "username/repo-name" as a flag`)
-			os.Exit(1)
+			cui.Warning(
+				"You have to type the repository name",
+				`Use --repo "username/repo-name" as a flag`,
+			)
 		}
 
 		if out == "" {
@@ -37,8 +37,7 @@ gh-label export --repo erdaltsksn/playground --out ~/Desktop/mylabels.json`,
 
 		githubv4.ExportLabels(repo, out)
 
-		color.Success.Prompt("The Labels are exported into a file:")
-		color.Info.Println("=>", out)
+		cui.Success("The Labels are exported into a file:", out)
 	},
 }
 

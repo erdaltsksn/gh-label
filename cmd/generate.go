@@ -6,9 +6,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/gookit/color"
 	"github.com/spf13/cobra"
 
+	"github.com/erdaltsksn/cui"
 	"github.com/erdaltsksn/gh-label/githubv4"
 )
 
@@ -31,32 +31,33 @@ gh-label generate --repo erdaltsksn/playground --file my-labels.json
 gh-label generate --repo erdaltsksn/playground --list "insane" --force`,
 	Run: func(cmd *cobra.Command, args []string) {
 		if repo == "" || !strings.Contains(repo, "/") {
-			color.Danger.Println("You have to type the repository name")
-			color.Info.Prompt(`Use --repo "username/repo-name" as a flag`)
-			os.Exit(1)
+			cui.Warning(
+				"You have to type the repository name",
+				`Use --repo "username/repo-name" as a flag`,
+			)
 		}
 
 		if (file == "") && (list == "") {
-			color.Danger.Println("You have to enter either --file or --list")
-			color.Info.Prompt(`Use --list "ultimate" as a flag`)
-			os.Exit(1)
+			cui.Warning(
+				"You have to enter either --file or --list",
+				`Use --list "ultimate" as a flag`,
+			)
 		}
 
 		var fileLabel io.Reader
 		if file != "" {
 			f, err := os.Open(file)
 			if err != nil {
-				color.Danger.Println("Error while trying to open the labels file")
-				color.Warn.Prompt(err.Error())
-				os.Exit(1)
+				cui.Error("Error while trying to open the labels file", err)
 			}
 			fileLabel = f
 		} else {
 			resp, err := http.Get("https://raw.githubusercontent.com/erdaltsksn/gh-label/master/labels/" + list + ".json")
 			if err != nil {
-				color.Danger.Println("We couldn't load the predefined labels.")
-				color.Info.Prompt(`Use --file "my-labels.json" as a flag`)
-				os.Exit(1)
+				cui.Warning(
+					"We couldn't load the predefined labels.",
+					`Use --file "my-labels.json" as a flag`,
+				)
 			}
 			fileLabel = resp.Body
 		}
@@ -67,7 +68,7 @@ gh-label generate --repo erdaltsksn/playground --list "insane" --force`,
 
 		githubv4.GenerateLabels(repo, fileLabel)
 
-		color.Success.Prompt("The Labels are imported into the repository")
+		cui.Success("The Labels are imported into the repository")
 	},
 }
 
