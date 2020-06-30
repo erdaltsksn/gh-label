@@ -3,6 +3,7 @@ package cmd
 import (
 	"os"
 
+	"github.com/erdaltsksn/cui"
 	"github.com/gookit/color"
 	"github.com/spf13/cobra"
 )
@@ -31,4 +32,8 @@ func Execute() {
 // GetRootCmd returns the instance of root command
 func GetRootCmd() *cobra.Command {
 	return rootCmd
+}
+
+func init() {
+	rootCmd.AddCommand(cui.VersionCmd)
 }

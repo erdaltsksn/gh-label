@@ -13,12 +13,12 @@ builds:
   - darwin
   - linux
   - windows
-  ldflags: -s -w -X main.version=v{{.Version}}
+  ldflags: -s -w -X github.com/erdaltsksn/cui.appVersion={{.Tag}}
 
 brews:
   - github:
       owner: erdaltsksn
       name: homebrew-tap
     folder: Formula
-    homepage: https://github.com/erdaltsksn/gh-label
+    homepage: "{{ .GitURL }}"
     description: A tool to help you manage GitHub issue labels
