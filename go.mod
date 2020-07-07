@@ -8,4 +8,5 @@ require (
 	github.com/matryer/is v1.3.0 // indirect
 	github.com/spf13/cobra v1.0.0
 	github.com/zalando/go-keyring v0.0.0-20200121091418-667557018717
+	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d
 )

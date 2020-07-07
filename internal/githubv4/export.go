@@ -13,7 +13,7 @@ import (
 func ExportLabels(repository string, out string) {
 	repo := strings.Split(repository, "/")
 
-	data := graphqlQuery(fmt.Sprintf(`
+	resp := graphqlQuery(fmt.Sprintf(`
 		query {
 			repository(owner: "%s", name: "%s") {
 				id
@@ -29,7 +29,7 @@ func ExportLabels(repository string, out string) {
 		}
 	`, repo[0], repo[1]))
 
-	labels, err := json.MarshalIndent(data.Repository.Labels.Nodes, "", "    ")
+	labels, err := json.MarshalIndent(resp.Repository.Labels.Nodes, "", "    ")
 	if err != nil {
 		cui.Error("We couldn't marshal the graphql query response", err)
 	}

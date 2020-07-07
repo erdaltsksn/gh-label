@@ -30,7 +30,12 @@ gh-label generate --repo erdaltsksn/playground --list "insane" --force
   -f, --force         This will remove all labels before generate the labels.
   -h, --help          help for generate
   -l, --list string   Predefined label list name. Use --list "ABC"
-  -r, --repo string   Repository which its labels will be exported into a file.
+```
+
+### Options inherited from parent commands
+
+```
+  -r, --repo string   Repository which its labels will be generated or exported into a file.
                       Please use 'username/repo-name' format.
 ```
 

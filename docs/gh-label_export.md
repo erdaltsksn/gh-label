@@ -24,10 +24,15 @@ gh-label export --repo erdaltsksn/playground --out ~/Desktop/mylabels.json
 ### Options
 
 ```
-  -h, --help          help for export
-  -o, --out string    Output file which contain label list will be save here.
-                      Use 'directory/filename.json' format
-  -r, --repo string   Repository which its labels will be exported into a file.
+  -h, --help         help for export
+  -o, --out string   Output file which contains label list will be save here.
+                     Use 'directory/filename.json' format
+```
+
+### Options inherited from parent commands
+
+```
+  -r, --repo string   Repository which its labels will be generated or exported into a file.
                       Please use 'username/repo-name' format.
 ```
 

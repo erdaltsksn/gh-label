@@ -27,6 +27,7 @@ request!
 ### Prerequisites
 
 - [Git](https://git-scm.com)
+- [Golang](https://golang.org)
 
 ## Commit Message Guidelines
 
@@ -63,9 +64,20 @@ The following is the list of supported scopes:
 - **(*)** Multiple scopes or Unknown.
 - **(devops)** e.g. git, travis, pre-commit, netlify, heroku, npm, gulp and etc.
 - **(readme)** e.g. readme, contributing, changelog, license and etc.
-- **(cmd)** Anything related to commands.
 - **(api)** Anything related to Github API client.
 - **(labels)** Predefined label list.
+- **(configCmd)** Anything related to `gh-label config` command.
+- **(exportCmd)** Anything related to `gh-label export` command.
+- **(generateCmd)** Anything related to `gh-label generate` command.
+
+#### Old / Deprecated Scopes
+
+Some of the scopes have become old/deprecated. The following is the list and
+their newer equivalents.
+
+| OLD                    | NEW                                                 |
+|------------------------|-----------------------------------------------------|
+| **(cmd)**              | **(configCmd)**, **(exportCmd)**, **(generateCmd)** |
 
 ### Revert and Merge
 

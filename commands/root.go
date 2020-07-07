@@ -1,11 +1,16 @@
-package cmd
+package commands
 
 import (
+	"strings"
+
 	"github.com/erdaltsksn/cui"
 	"github.com/spf13/cobra"
 )
 
-// rootCmd represents the base command when called without any subcommands
+// Used by `exportCmd`and `generateCmd`.
+var repo string
+
+// rootCmd represents the base command when called without any subcommands.
 var rootCmd = &cobra.Command{
 	Use:   "gh-label",
 	Short: "This app helps you manage GitHub issue labels.",
@@ -25,11 +30,24 @@ func Execute() {
 	}
 }
 
-// GetRootCmd returns the instance of root command
+// GetRootCmd returns the instance of root command.
 func GetRootCmd() *cobra.Command {
 	return rootCmd
 }
 
 func init() {
 	rootCmd.AddCommand(cui.VersionCmd)
+
+	rootCmd.PersistentFlags().StringVarP(&repo, "repo", "r", "",
+		`Repository which its labels will be generated or exported into a file.
+Please use 'username/repo-name' format.`)
+}
+
+func validateFlagRepoIsValid() {
+	if repo == "" || !strings.Contains(repo, "/") {
+		cui.Warning(
+			"You have to type the repository name",
+			`Use --repo "username/repo-name" as a flag`,
+		)
+	}
 }

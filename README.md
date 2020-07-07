@@ -4,7 +4,7 @@
 ![Go](https://github.com/erdaltsksn/gh-label/workflows/Go/badge.svg)
 [![Go Report Card](https://goreportcard.com/badge/github.com/erdaltsksn/gh-label)](https://goreportcard.com/report/github.com/erdaltsksn/gh-label)
 
-`gh-label` provides us a cli to manage GitHub issue labels.
+Github Label AKA `gh-label` is a cli app to manage GitHub Issue Labels.
 
 ## Features
 
@@ -22,7 +22,7 @@ This is required. You can generate a new one from [here](https://github.com/sett
 ### 2. Install and configure the application
 
 ```sh
-go get github.com/erdaltsksn/gh-label
+brew install erdaltsksn/tap/gh-label
 gh-label config --token <GITHUB_TOKEN>
 ```
 
@@ -46,7 +46,7 @@ brew install erdaltsksn/tap/gh-label
 go get github.com/erdaltsksn/gh-label
 ```
 
-## Updating
+## Updating / Upgrading
 
 ### Using Homebrew
 

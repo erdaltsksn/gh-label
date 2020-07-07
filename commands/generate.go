@@ -1,22 +1,23 @@
-package cmd
+package commands
 
 import (
 	"io"
 	"net/http"
 	"os"
-	"strings"
 
 	"github.com/spf13/cobra"
 
 	"github.com/erdaltsksn/cui"
-	"github.com/erdaltsksn/gh-label/githubv4"
+	"github.com/erdaltsksn/gh-label/internal/githubv4"
 )
 
-var force bool
-var list string
-var file string
+var (
+	list  string
+	file  string
+	force bool
+)
 
-// generateCmd represents the generate command
+// generateCmd represents the generate command.
 var generateCmd = &cobra.Command{
 	Use:   "generate",
 	Short: "Generate labels using a list",
@@ -29,13 +30,8 @@ gh-label generate --repo erdaltsksn/playground --file my-labels.json
 
 # DANGER: Remove all the labels before generating the labels
 gh-label generate --repo erdaltsksn/playground --list "insane" --force`,
-	Run: func(cmd *cobra.Command, args []string) {
-		if repo == "" || !strings.Contains(repo, "/") {
-			cui.Warning(
-				"You have to type the repository name",
-				`Use --repo "username/repo-name" as a flag`,
-			)
-		}
+	PreRun: func(cmd *cobra.Command, args []string) {
+		validateFlagRepoIsValid()
 
 		if (file == "") && (list == "") {
 			cui.Warning(
@@ -43,7 +39,8 @@ gh-label generate --repo erdaltsksn/playground --list "insane" --force`,
 				`Use --list "ultimate" as a flag`,
 			)
 		}
-
+	},
+	Run: func(cmd *cobra.Command, args []string) {
 		var fileLabel io.Reader
 		if file != "" {
 			f, err := os.Open(file)
@@ -76,14 +73,10 @@ func init() {
 	rootCmd.AddCommand(generateCmd)
 
 	// Here you will define your flags and configuration settings.
-	generateCmd.PersistentFlags().StringVarP(&repo, "repo", "r", "",
-		`Repository which its labels will be exported into a file.
-Please use 'username/repo-name' format.`)
-	generateCmd.MarkFlagRequired("repo")
-	generateCmd.PersistentFlags().BoolVarP(&force, "force", "f", false,
-		`This will remove all labels before generate the labels.`)
-	generateCmd.PersistentFlags().StringVarP(&list, "list", "l", "",
+	generateCmd.Flags().StringVarP(&list, "list", "l", "",
 		`Predefined label list name. Use --list "ABC"`)
-	generateCmd.PersistentFlags().StringVar(&file, "file", "",
+	generateCmd.Flags().StringVar(&file, "file", "",
 		`Use file as a label list. User --list "file.json"`)
+	generateCmd.Flags().BoolVarP(&force, "force", "f", false,
+		`This will remove all labels before generate the labels.`)
 }
