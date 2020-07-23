@@ -13,6 +13,10 @@ Github Label AKA `gh-label` is a cli app to manage GitHub Issue Labels.
 - Working on public and private repositories
 - Insane label list
 
+## Requirements
+
+- GitHub Personal Access Token with `repo` scope
+
 ## Getting Started
 
 ### 1. Create a new personal access token
