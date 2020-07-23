@@ -66,18 +66,18 @@ The following is the list of supported scopes:
 - **(readme)** e.g. readme, contributing, changelog, license and etc.
 - **(api)** Anything related to Github API client.
 - **(labels)** Predefined label list.
-- **(configCmd)** Anything related to `gh-label config` command.
-- **(exportCmd)** Anything related to `gh-label export` command.
-- **(generateCmd)** Anything related to `gh-label generate` command.
+- **(config)** Anything related to `gh-label config` command.
+- **(export)** Anything related to `gh-label export` command.
+- **(generate)** Anything related to `gh-label generate` command.
 
 #### Old / Deprecated Scopes
 
 Some of the scopes have become old/deprecated. The following is the list and
 their newer equivalents.
 
-| OLD                    | NEW                                                 |
-|------------------------|-----------------------------------------------------|
-| **(cmd)**              | **(configCmd)**, **(exportCmd)**, **(generateCmd)** |
+| OLD                             | NEW                                        |
+|---------------------------------|--------------------------------------------|
+| (cmd)                           | **(config)**, **(export)**, **(generate)** |
 
 ### Revert and Merge
 
