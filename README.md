@@ -1,6 +1,6 @@
 # GitHub Label
 
-[![GoDoc](https://godoc.org/github.com/erdaltsksn/gh-label?status.svg)](https://godoc.org/github.com/erdaltsksn/gh-label)
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/erdaltsksn/gh-label)](https://pkg.go.dev/github.com/erdaltsksn/gh-label)
 ![Go](https://github.com/erdaltsksn/gh-label/workflows/Go/badge.svg)
 [![Go Report Card](https://goreportcard.com/badge/github.com/erdaltsksn/gh-label)](https://goreportcard.com/report/github.com/erdaltsksn/gh-label)
 
