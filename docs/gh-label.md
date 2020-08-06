@@ -21,5 +21,5 @@ You are welcome to add yours.
 * [gh-label config](gh-label_config.md)	 - Configure the application
 * [gh-label export](gh-label_export.md)	 - Export GitHub label list into a file
 * [gh-label generate](gh-label_generate.md)	 - Generate labels using a list
-* [gh-label version](gh-label_version.md)	 - Prints the app's version
+* [gh-label version](gh-label_version.md)	 - Print the app's version
 
