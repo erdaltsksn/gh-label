@@ -3,7 +3,7 @@ module github.com/erdaltsksn/gh-label
 go 1.13
 
 require (
-	github.com/erdaltsksn/cui v0.3.0
+	github.com/erdaltsksn/cui v0.4.0
 	github.com/machinebox/graphql v0.2.2
 	github.com/matryer/is v1.3.0 // indirect
 	github.com/spf13/cobra v1.0.0
