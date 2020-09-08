@@ -23,6 +23,10 @@ run: ## Run all examples
 test: ## Run all test
 	go test -v ./...
 
+.PHONY: docs
+docs: ## Generate documentation
+	go run docs/gen.go
+
 .PHONY: build
 build: ## Build gh-label app
 	go build -o ./bin/gh-label cmd/main.go
