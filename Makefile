@@ -15,7 +15,7 @@ fmt: ## Run all formatings
 	go fmt ./...
 
 .PHONY: run
-run: ## Run all examples
+run: ## Run the application
 	make build
 	./bin/gh-label
 
@@ -28,7 +28,7 @@ docs: ## Generate documentation
 	go run docs/gen.go
 
 .PHONY: build
-build: ## Build gh-label app
+build: ## Build the app
 	go build -o ./bin/gh-label cmd/main.go
 
 .PHONY: clean
