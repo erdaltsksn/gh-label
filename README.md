@@ -11,7 +11,7 @@ Github Label AKA `gh-label` is a cli app to manage GitHub Issue Labels.
 - Cross-Platform
 - Secure token management using key managers
 - Working on public and private repositories
-- Predefined label list
+- Predefined [label list](https://github.com/erdaltsksn/gh-label/tree/master/labels)
 
 ## Requirements
 
