@@ -49,7 +49,7 @@ gh-label generate --repo erdaltsksn/playground --list "insane" --force`,
 			}
 			fileLabel = f
 		} else {
-			resp, err := http.Get("https://raw.githubusercontent.com/erdaltsksn/gh-label/master/labels/" + list + ".json")
+			resp, err := http.Get("https://raw.githubusercontent.com/erdaltsksn/gh-label/main/labels/" + list + ".json")
 			if err != nil {
 				cui.Warning(
 					"We couldn't load the predefined labels.",
