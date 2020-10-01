@@ -70,11 +70,15 @@ go get -u github.com/erdaltsksn/gh-label
 You may find the documentation for [each command](docs/gh-label.md) inside the
 [docs](docs) folder.
 
-### Getting Help
+## Getting Help
 
 ```sh
+# Getting help for related command.
 gh-label --help
 gh-label [command] --help
+
+# Show available `make` commands.
+make help
 ```
 
 ## Contributing
