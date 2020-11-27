@@ -1,7 +1,7 @@
 # GitHub Label
 
 [![PkgGoDev](https://pkg.go.dev/badge/github.com/erdaltsksn/gh-label)](https://pkg.go.dev/github.com/erdaltsksn/gh-label)
-![Go](https://github.com/erdaltsksn/gh-label/workflows/Go/badge.svg)
+![Go](https://github.com/erdaltsksn/cui/workflows/Go%20(build)/badge.svg)
 [![Go Report Card](https://goreportcard.com/badge/github.com/erdaltsksn/gh-label)](https://goreportcard.com/report/github.com/erdaltsksn/gh-label)
 ![CodeQL](https://github.com/erdaltsksn/gh-label/workflows/CodeQL/badge.svg)
 
@@ -39,30 +39,15 @@ gh-label generate --repo erdaltsksn/playground --list "insane"
 
 ## Installation
 
-### Using Homebrew
-
 ```sh
 brew install erdaltsksn/tap/gh-label
 ```
 
-### Using Go Modules
-
-```sh
-go get github.com/erdaltsksn/gh-label
-```
-
 ## Updating / Upgrading
 
-### Using Homebrew
 
 ```sh
 brew upgrade erdaltsksn/tap/gh-label
-```
-
-### Using Go Modules
-
-```sh
-go get -u github.com/erdaltsksn/gh-label
 ```
 
 ## Usage
@@ -76,9 +61,6 @@ You may find the documentation for [each command](docs/gh-label.md) inside the
 # Getting help for related command.
 gh-label --help
 gh-label [command] --help
-
-# Show available `make` commands.
-make help
 ```
 
 ## Contributing
