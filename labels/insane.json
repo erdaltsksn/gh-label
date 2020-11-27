@@ -40,11 +40,6 @@
         "description": "This will not be worked on."
     },
     {
-        "name": "Status: Stale",
-        "color": "888888",
-        "description": "This issue has been open for a long time with no activity."
-    },
-    {
         "name": "Type: Bug",
         "color": "ff3333",
         "description": "Something isn't working as expected."
