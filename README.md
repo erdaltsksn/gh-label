@@ -47,7 +47,6 @@ brew install erdaltsksn/tap/gh-label
 
 ## Updating / Upgrading
 
-
 ```sh
 brew upgrade erdaltsksn/tap/gh-label
 ```
