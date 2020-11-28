@@ -21,8 +21,8 @@ coverage: ## Show test coverage
 	@rm coverage.out
 
 .PHONY: docs
-docs: ## Generate documentation
-	go run docs/gen.go
+docs: ## Generate the documentation
+	go run ./scripts/gen-docs/main.go
 
 .PHONY: godoc
 godoc: ## Start local godoc server

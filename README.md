@@ -28,6 +28,8 @@ This is required. You can generate a new one from [here](https://github.com/sett
 
 ```sh
 brew install erdaltsksn/tap/gh-label
+
+# Save the access token into key manager.
 gh-label config --token <GITHUB_TOKEN>
 ```
 

@@ -37,7 +37,7 @@ gh-label export --repo erdaltsksn/playground --out ~/Desktop/mylabels.json`,
 }
 
 func init() {
-	rootCmd.AddCommand(exportCmd)
+	RootCmd.AddCommand(exportCmd)
 
 	// Here you will define your flags and configuration settings.
 	exportCmd.Flags().StringVarP(&out, "out", "o", "",

@@ -70,7 +70,7 @@ gh-label generate --repo erdaltsksn/playground --list "insane" --force`,
 }
 
 func init() {
-	rootCmd.AddCommand(generateCmd)
+	RootCmd.AddCommand(generateCmd)
 
 	// Here you will define your flags and configuration settings.
 	generateCmd.Flags().StringVarP(&list, "list", "l", "",

@@ -10,8 +10,8 @@ import (
 // Used by `exportCmd`and `generateCmd`.
 var repo string
 
-// rootCmd represents the base command when called without any subcommands.
-var rootCmd = &cobra.Command{
+// RootCmd represents the base command when called without any subcommands.
+var RootCmd = &cobra.Command{
 	Use:   "gh-label",
 	Short: "This app helps you manage GitHub issue labels.",
 	Long: `gh-label helps you export, generate, import, regenerate GitHub Issue
@@ -22,23 +22,10 @@ You are welcome to add yours.`,
 	//	Run: func(cmd *cobra.Command, args []string) { },
 }
 
-// Execute adds all child commands to the root command and sets flags appropriately.
-// This is called by main.main(). It only needs to happen once to the rootCmd.
-func Execute() {
-	if err := rootCmd.Execute(); err != nil {
-		cui.Error("Something went wrong", err)
-	}
-}
-
-// GetRootCmd returns the instance of root command.
-func GetRootCmd() *cobra.Command {
-	return rootCmd
-}
-
 func init() {
-	rootCmd.AddCommand(cui.VersionCmd)
+	RootCmd.AddCommand(cui.VersionCmd)
 
-	rootCmd.PersistentFlags().StringVarP(&repo, "repo", "r", "",
+	RootCmd.PersistentFlags().StringVarP(&repo, "repo", "r", "",
 		`Repository which its labels will be generated or exported into a file.
 Please use 'username/repo-name' format.`)
 }
