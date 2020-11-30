@@ -23,8 +23,6 @@ You are welcome to add yours.`,
 }
 
 func init() {
-	RootCmd.AddCommand(cui.VersionCmd)
-
 	RootCmd.PersistentFlags().StringVarP(&repo, "repo", "r", "",
 		`Repository which its labels will be generated or exported into a file.
 Please use 'username/repo-name' format.`)
