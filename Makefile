@@ -4,6 +4,12 @@
 help: ## Show this help
 	@egrep -h '\s##\s' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
+.PHONY: clean
+clean: ## Clean all generated files
+	go clean
+	rm -rf ./vendor/
+	rm -rf ./go.sum
+
 .PHONY: fmt
 fmt: ## Run all formatings
 	go mod vendor
@@ -30,8 +36,3 @@ godoc: ## Start local godoc server
 	@echo "    http://localhost:6060/pkg/github.com/erdaltsksn/gh-label"
 	@echo ""
 	@godoc -http=:6060
-
-.PHONY: clean
-clean: ## Clean all generated files
-	rm -rf ./vendor/
-	rm -rf ./go.sum
