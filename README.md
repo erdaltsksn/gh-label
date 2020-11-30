@@ -1,7 +1,7 @@
 # GitHub Label
 
 [![PkgGoDev](https://pkg.go.dev/badge/github.com/erdaltsksn/gh-label)](https://pkg.go.dev/github.com/erdaltsksn/gh-label)
-![Go](https://github.com/erdaltsksn/cui/workflows/Go%20(build)/badge.svg)
+![Go (build)](https://github.com/erdaltsksn/gh-label/workflows/Go%20(build)/badge.svg)
 [![Go Report Card](https://goreportcard.com/badge/github.com/erdaltsksn/gh-label)](https://goreportcard.com/report/github.com/erdaltsksn/gh-label)
 ![CodeQL](https://github.com/erdaltsksn/gh-label/workflows/CodeQL/badge.svg)
 
@@ -12,7 +12,7 @@ Github Label AKA `gh-label` is a cli app to manage GitHub Issue Labels.
 - Cross-Platform
 - Secure token management using key managers
 - Working on public and private repositories
-- Predefined [label list](https://github.com/erdaltsksn/gh-label/tree/main/labels)
+- Predefined [labels](https://github.com/erdaltsksn/gh-label/tree/main/labels)
 
 ## Requirements
 
