@@ -18,7 +18,7 @@ fmt: ## Run all formatings
 
 .PHONY: test
 test: ## Run all test
-	go test -v ./...
+	go test ./...
 
 .PHONY: coverage
 coverage: ## Show test coverage
