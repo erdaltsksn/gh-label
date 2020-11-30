@@ -29,10 +29,3 @@ coverage: ## Show test coverage
 .PHONY: docs
 docs: ## Generate the documentation
 	go run ./scripts/gen-docs/main.go
-
-.PHONY: godoc
-godoc: ## Start local godoc server
-	@echo "See Documentation:"
-	@echo "    http://localhost:6060/pkg/github.com/erdaltsksn/gh-label"
-	@echo ""
-	@godoc -http=:6060
